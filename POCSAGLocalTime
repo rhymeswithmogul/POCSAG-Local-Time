@@ -14,7 +14,7 @@ import configparser
 def SendMessage():
     now = datetime.now()
     localtime = now.strftime('%y%m%d%H%M%S')
-    command = ['RemoteCommand', '7642', 'page', '224', f'"YYYYMMDDHHMMSS{localtime}"']
+    command = ['RemoteCommand', '7642', 'page', '224', f"YYYYMMDDHHMMSS{localtime}"]
     try:
         result = subprocess.run(command, check=True)
         logger.info(f'Sending message in slot {next_timeslot} to 0000224, type 6, func Alphanumeric: "YYYYMMDDHHMMSS{localtime}"')
